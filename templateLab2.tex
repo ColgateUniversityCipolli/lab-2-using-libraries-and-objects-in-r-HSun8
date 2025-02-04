@@ -93,29 +93,28 @@
 This document provides a basic template for the 2-page labs we will complete each week. Here, briefly summarize what you did and why it might be helpful. Provide all the top-line conclusions, but avoid providing \emph{all} the details. Results should be limited to ``we show X, Y, and Z."
 \end{abstract}
 
-\noindent \textbf{Keywords:} What topics does the lab cover concerning class? List 3-4 key terms here, separated by semicolons.
+\noindent \textbf{Keywords:} Installing, loading, and learning to use libraries; working with characters objects; coding \texttt{for()} loops; accessing elements of vectors and lists.
 
 \section{Introduction}
-Provide an overarching summary of what you're talking about. In this section, you introduce the idea to the reader, and your goal is to pull them in. What's the mystery you aim to solve?
+\indent 
+In the first week of this lab, we built a batch file (\texttt{batfile.txt}) for data processing, and we processed a sample \texttt{.json} file. \\
+\indent We used the \texttt{stringr} \cite{stringr} and \texttt{jsonlite} \cite{jsonlite} packages to accomplish these tasks.
 
-You want to provide enough background to understand the context of the work. Specifically, what is the question you are addressing? If it applies, describe what information currently exists about this problem, including citations, and explain how the question you're answering complements this work.
-
-Provide a roadmap of the structure of the paper. 
 
 \subsection{Intro Subsection}
 You might need/want to discuss the topics in subsections. Or, you may have multiple questions.
 
 
 \section{Methods}
-Describe the data you are working with, if applicable. Describe the specific process you will follow to answer the question at hand. This does not mean you should write something like this.
-\begin{quote}
-\textit{I did this and then I did that and then I did this other thing and then..., and then..., and then...}
-\end{quote}
-Instead, it should provide a clear and concise narrative that flows from the problem specification in the Introduction to how you will approach answering it. This is where I would expect to see some citations for \texttt{R} packages you will use to conduct the statistical analysis reported in the Results section.
 
+In the first week of this lab, we completed two main tasks: building a batch file (\texttt{batfile.txt}) for data processing, and we processed a sample \texttt{.json} file. We used the \texttt{stringr} \cite{stringr} and \texttt{jsonlite} \cite{jsonlite} files for each task, respectively. 
 
-\subsection{Methods Subsection}
-Much like the Introduction, subsections can be helpful for the Methods section. For example, you might describe data collection and the statistical analyses of the collected data in different subsections. Or, you may have different questions that require distinct methods. 
+\subsection{Building a Batch File for Data Processing}
+\indent For our first task, we first began by downloading the directory of songs onto the computer and downloading the \texttt{stringr} package. By using the functions in the \texttt{stringr} package, we were able to identify which directories were albums by using the \verb|str_count()| function. For each album, we identified all the songs by using \verb|str_count()| to count the occurrences of \texttt{.wav} in each file. By using a for loop through each album, we were able to create a vector called \texttt{code.to.process}, with each song being stored in the format as a \texttt{.json} and \texttt{.wav} file.
+We used \verb|paste()| and other \texttt{stringr} functions to extract \texttt{artist}, \texttt{album}, and \texttt{track}, from each directory or file.
+Finally, we used \verb|writeLines()| to turn our vector of songs into a batch file. 
+\subsection{Processing JSON Output}
+\indent Our second task was to process JSON Output from a sample song, Au Revoir (Adios) on the Talon Of The Hawk album by The Front Bottoms. We first begin by installing the \texttt{jsonlite} package, and repeating a similar process in our first task, by extracting the \texttt{artist}, \texttt{album}, and \texttt{track} from our sample file. We used \verb|fromJSON()| function from the \texttt{jsonlite} to load the file in as a list, where we could then extract the average loudness, beats per minute (bpm), musical key, song length, among other stylistic features. 
 
 \section{Results}
 Tie together the Introduction -- where you introduce the problem at hand -- and the methods --  what you propose to do to answer the question. Present your data, the results of your analyses, and how each reported aspect contributes to answering the question. This section should include table(s), statistic(s), and graphical displays. Make sure to put the results in a sensible order and that each result contributes a logical and developed solution. It should not just be a list. Avoid being repetitive. 
@@ -133,9 +132,6 @@ Finally, provide some concluding remarks that tie together the entire paper. Thi
 % Bibliography
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \vspace{2em}
-
-\noindent\textbf{Bibliography:} Note that when you add citations to your bib.bib file \emph{and}
-you cite them in your document, the bibliography section will automatically populate here.
 
 \begin{tiny}
 \bibliography{bib}
